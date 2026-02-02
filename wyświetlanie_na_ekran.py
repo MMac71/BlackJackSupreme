@@ -1,3 +1,6 @@
+from obiekty import Gracz
+from obiekty import Krupier
+from bonusy import LISTA_BONUSOW
 
 def wyswietl_stan_gry(gracz: Gracz, krupier: Krupier, zakonczona=False):
 
