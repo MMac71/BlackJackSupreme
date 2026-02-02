@@ -2,7 +2,6 @@ from obiekty import Talia, Krupier, Gracz
 from bonusy import ManagerBonusow
 from wyzejnizej import nizsza_wyzsza
 from wyświetlanie_na_ekran import wyswietl_stan_gry
-# Importujemy funkcje z Twojego nowego pliku logika_gry
 from logika_gry import (
     pobierz_zaklad, 
     obsluga_bonusow, 
@@ -19,14 +18,27 @@ def gra_blackjack():
     
     print("Witaj w BLACKJACK SUPREME!")
     imie = input("Podaj swoje imię: ")
-    gracz = Gracz(imie, 1000)
+    while True:
+        try:
+            początkowy_balans = int(input("Podaj początkowy balans (max=5000): "))
+            if 0 < początkowy_balans <= 5000:
+                break
+            else:
+                print("Balans musi być liczbą z zakresu 1-5000.")
+        except ValueError:
+            print("Wprowadź poprawną liczbę.")
+
+    gracz = Gracz(imie, początkowy_balans)
     
     manager_b = ManagerBonusow()
     mini_gra = nizsza_wyzsza(talia)
 
     # --- PĘTLA GŁÓWNA GRY ---
     while gracz.balans > 0:
-        
+        if len(talia.karty) < 45:
+            print("\n🔄 Tasowanie nowej talii...")
+            talia = Talia()
+            talia.tasuj()
         print(f"\n{'='*20} NOWA RUNDA {'='*20}")
         krupier = Krupier()
         gracz.reka.karty.clear()

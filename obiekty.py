@@ -111,7 +111,7 @@ class Krupier(Reka): # Dziedziczenie klas
         # if self.punkty > 21: (mechanika wygrywania)
 
 class Gracz:
-    def __init__(self, imie, poczatkowy_balans=1000):
+    def __init__(self, imie, poczatkowy_balans):
         self.imie = imie
         self.balans = poczatkowy_balans
         self.reka = Reka()
