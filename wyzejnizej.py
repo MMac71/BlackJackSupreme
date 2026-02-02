@@ -1,4 +1,5 @@
 import random
+from obiekty import Karta, Talia
 class nizsza_wyzsza:
 
     def __init__(self, talia: Talia):
