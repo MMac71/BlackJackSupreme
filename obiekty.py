@@ -27,7 +27,7 @@ class Talia:
     talia.dobierz() - zwraca kartę z talii i ją z niej usuwa
     '''
     def __init__(self):
-        kolory = ["Pik", "Kier", "Karo", "Trefl"]
+        kolory = ["♠", "♥", "♦", "♣"]
         znaki = ['2','3','4','5','6','7','8','9','10','J','Q','K','A']
 
         self.karty = [Karta(z,k) for z in znaki for k in kolory]# na razie 1 talia

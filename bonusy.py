@@ -47,7 +47,7 @@ class ManagerBonusow:
         liczba_kroli = 0
         
         for karta in reka_gracza.karty:
-            if karta.wartosc == 10 and karta.figura == 'K':
+            if karta.wartosc == 10 and karta.znak == 'K':
                 liczba_kroli += 1
                 
         if liczba_kroli == 2:
@@ -113,9 +113,9 @@ class ManagerBonusow:
         dama_znaki = []
         
         for karta in reka_gracza.karty:
-            if karta.wartosc == 10 and karta.figura == 'K':
+            if karta.wartosc == 10 and karta.znak == 'K':
                 krol_znaki.append(karta.znak)
-            elif karta.wartosc == 10 and karta.figura == 'Q':
+            elif karta.wartosc == 10 and karta.znak == 'Q':
                 dama_znaki.append(karta.znak)
         
         for znak in krol_znaki:
