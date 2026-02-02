@@ -110,6 +110,24 @@ class Krupier(Reka): # Dziedziczenie klas
 
         # if self.punkty > 21: (mechanika wygrywania)
 
+class Gracz:
+    def __init__(self, imie, poczatkowy_balans=1000):
+        self.imie = imie
+        self.balans = poczatkowy_balans
+        self.reka = Reka()
+        self.biezacy_zaklad = 0
+        self.aktywny_bonus = None # Tu przechowujemy słownik z bonusem
+
+    def postaw_zaklad(self, kwota):
+        if 0 < kwota <= self.balans:
+            self.biezacy_zaklad = kwota
+            self.balans -= kwota
+            return True
+        return False
+
+    def dodaj_wygrana(self, kwota):
+        self.balans += round(kwota, 2)
+
     
 if __name__ == "__main__": #testy, wyswietla sie przy bezpośrednim uruchomieniu, nie przy imporcie
     stos=Talia()
