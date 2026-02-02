@@ -84,7 +84,7 @@ def gra_blackjack():
         
         # Pytanie o kontynuację
         if input("\nGrasz dalej? (T/N): ").upper() != 'T':
-            print(f"\nKończysz grę z wynikiem: {gracz.balans} PLN. Gratulacje!")
+            print(f"\nMam nadzieję, że widzimy sie niedługo znowu {gracz.imie}! Kończysz grę z wynikiem: {gracz.balans} PLN. Gratulacje!")
             break
 
 if __name__ == "__main__":
