@@ -124,3 +124,4 @@ class nizsza_wyzsza:
                 print("❌ Przegrałeś tę rundę! Tracisz wszystko.")
                 aktualna_wygrana = 0
                 break
+        return aktualna_wygrana
