@@ -37,8 +37,19 @@ Projekt zaliczeniowy kursu "Wstęp do programowania"
      * Musi dobierać karty (Hit), dopóki ma 16 punktów lub mniej.
      * Musi spasować (Stand), gdy ma 17 punktów lub więcej.
 
-5. **Bonusy**
-   * *(Do uzupełnienia)*
+5. **Bonusy (Side Bets)**
+   * Gracz przed rozpoczęciem każdej rundy może postawić zakład na bonus.
+   * **Rodzaje bonusów:**
+     * **21+3 (Suma 24):** Twoja suma punktów wynosi dokładnie 24. Wypłata 9:1.
+     * **Perfect Pair:** Musisz posiadać dwie karty o tym samym znaku. Wypłata 5:1.
+     * **King's Bounty:** Posiadanie dwóch Króli na ręce. Wypłata 8:1.
+     * **Krupier Bust:** Krupier przekroczy 21 punktów. Wypłata 3:1.
+     * **Holy Six Seven:** Masz w ręce szóstkę i siódemkę. Wypłata 67:1.
+     * **Super 7:** Twoja ręka musi składać się z samych siódemek. Wypłata 15:1.
+     * **Super Lucky:** 5 kart w ręce bez przekroczenia 21 punktów. Wypłata 25:1.
+     * **21 (3+ karty):** Uzyskanie sumy 21 przy użyciu co najmniej trzech kart. Wypłata 2:1.
+     * **Para Królewska:** Posiadanie Króla i Damy tego samego znaku. Wypłata 10:1.
+     * **Remis z Krupierem:** Twój wynik jest taki sam jak krupiera. Wypłata 4:1.
 
 6. **Wynik**
    * **Blackjack:** As + karta za 10 pkt (10, J, Q, K) w pierwszych dwóch kartach. Wypłata 3:2.
