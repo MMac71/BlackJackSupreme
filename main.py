@@ -86,10 +86,16 @@ def gra_blackjack():
         if gracz.balans <= 0:
             print(f"\nNiestety, {gracz.imie}, nie masz już środków na dalszą grę. Do zobaczenia następnym razem!")
             break
-        decyzja = input("\nGrasz dalej? (T/N): ").upper()
-        if decyzja != 'T':
-             print(f"\nMam nadzieję, że widzimy sie niedługo znowu {gracz.imie}! Kończysz grę z wynikiem: {gracz.balans} PLN. Gratulacje!")
-             break
+        while True:
+            decyzja = input("\nGrasz dalej? (T/N): ").upper()
+            if decyzja != 'T' and decyzja != 'N':
+                print("Wprowadź poprawną decyzję: 'T' (Tak) lub 'N' (Nie)")
+            elif decyzja == 'N':
+                print(f"\nMam nadzieję, że widzimy sie niedługo znowu {gracz.imie}! Kończysz grę z wynikiem: {gracz.balans} PLN. Gratulacje!")
+                return
+            elif decyzja == 'T':
+                break
+            
         
             
                 

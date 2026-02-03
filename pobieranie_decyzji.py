@@ -9,11 +9,6 @@ def pobierz_akcje(gracz: Gracz, stos: Talia):
     if mozna_double:
         opcje.append("(D) Double Down")
         
-    # Możliwość splitu
-    mozna_split = gracz.reka.czy_split() and gracz.balans >= gracz.biezacy_zaklad
-    if mozna_split:
-        opcje.append("(P) Split")
-
     print(f"DOSTĘPNE AKCJE: {', '.join(opcje)}")
     
     while True:
@@ -24,6 +19,6 @@ def pobierz_akcje(gracz: Gracz, stos: Talia):
             gracz.balans -= gracz.biezacy_zaklad
             gracz.biezacy_zaklad *= 2
             return 'DOUBLE'
-        if wybor == 'P' and mozna_split:
+        if wybor == 'P':
             return 'SPLIT'
         print("❌ Nieprawidłowy wybór!")

@@ -82,7 +82,9 @@ class ManagerBonusow:
         for karta in reka_gracza.karty:
             if karta.wartosc != 7:
                 return False
-        return True
+        if len(reka_gracza.karty) == 3:
+            return True
+        return False
     def sprawdz_piec_kart_bez_busta(self, reka_gracza):
         '''
         Sprawdza czy gracz ma pięć kart i nie przekroczył 21 punktów
