@@ -83,12 +83,17 @@ def gra_blackjack():
         gracz.biezacy_zaklad = 0
         
         # Pytanie o kontynuację
-        if input("\nGrasz dalej? (T/N): ").upper() != 'T':
-            if gracz.balans <= 0:
-                print(f"\nNiestety, {gracz.imie}, nie masz już środków na dalszą grę. Do zobaczenia następnym razem!")
-            elif input("\nGrasz dalej? (T/N): ").upper() != 'T':
-                print(f"\nMam nadzieję, że widzimy sie niedługo znowu {gracz.imie}! Kończysz grę z wynikiem: {gracz.balans} PLN. Gratulacje!")
+        if gracz.balans <= 0:
+            print(f"\nNiestety, {gracz.imie}, nie masz już środków na dalszą grę. Do zobaczenia następnym razem!")
             break
+        decyzja = input("\nGrasz dalej? (T/N): ").upper()
+        if decyzja != 'T':
+             print(f"\nMam nadzieję, że widzimy sie niedługo znowu {gracz.imie}! Kończysz grę z wynikiem: {gracz.balans} PLN. Gratulacje!")
+             break
+        
+            
+                
+            
 
 if __name__ == "__main__":
     gra_blackjack()
