@@ -1,3 +1,4 @@
+import argparse
 from obiekty import Talia, Krupier, Gracz
 from bonusy import ManagerBonusow
 from wyzejnizej import nizsza_wyzsza
@@ -12,21 +13,40 @@ from logika_gry import (
 )
 
 def gra_blackjack():
+    parser = argparse.ArgumentParser(description="Uruchom grę BlackJackSupreme")
+    parser.add_argument('--imie', type=str, help='Ustawia imię gracza', default=None)
+    parser.add_argument('--balans', type=int, help='Ustawia początkow balans (1-5000)', default=None)
+    args = parser.parse_args()
+
+
     # --- INICJALIZACJA ---
     talia = Talia()
     talia.tasuj()
     
     print("Witaj w BLACKJACK SUPREME!")
-    imie = input("Podaj swoje imię: ")
-    while True:
-        try:
-            początkowy_balans = int(input("Podaj początkowy balans (max=5000): "))
-            if 0 < początkowy_balans <= 5000:
-                break
-            else:
-                print("Balans musi być liczbą z zakresu 1-5000.")
-        except ValueError:
-            print("Wprowadź poprawną liczbę.")
+
+    # OBSŁUGA IMIENIA (z argumentu lub inputu)
+    if args.imie:
+        imie=args.imie
+        print(f"Witaj {imie}")
+    else:
+        imie = input("Podaj swoje imię: ")
+
+    # OBSŁUGA BALANSU (z argumentu lub inputu)
+    początkowy_balans=0
+    if args.balans and 0<args.balans<=5000:
+        początkowy_balans=args.balans
+        print(f"Ustawiono balans: {początkowy_balans}")
+    else:
+        while True:
+            try:
+                początkowy_balans = int(input("Podaj początkowy balans (max=5000): "))
+                if 0 < początkowy_balans <= 5000:
+                    break
+                else:
+                    print("Balans musi być liczbą z zakresu 1-5000.")
+            except ValueError:
+                print("Wprowadź poprawną liczbę.")
 
     gracz = Gracz(imie, początkowy_balans)
     
