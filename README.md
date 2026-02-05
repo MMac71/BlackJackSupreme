@@ -56,3 +56,20 @@ Projekt zaliczeniowy kursu "Wstęp do programowania"
    * **Wygrana:** Masz więcej niż krupier lub krupier przekroczył 21. Wypłata 1:1.
    * **Push:** Masz tyle samo punktów co krupier. Odzyskujesz swój zakład.
    * **Bust:** Przekroczyłeś 21 punktów. Przegrywasz od razu, nawet jeśli krupier później też przekroczy 21.
+
+
+---
+
+## Instalacja i uruchomienie programu
+
+1. **Pobierz pliki projektu**
+
+2. **Otwórz terminal w folderze z grą**
+
+3. **Uruchom polecenie:**
+      python main.py
+      * dodatkowo python main.py --help (wyświetla pomoc)
+      * python main.py --imie [IMIE] --balans [(1-5000)]
+
+4. **Powodzenia i życzymy wielkiej wygranej ~ zespół BJS**
+
